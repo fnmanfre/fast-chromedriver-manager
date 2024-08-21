@@ -1,0 +1,2 @@
+# ChromeDriverManager
+ Chromedriver Manager is a Python library that automates the download and installation of the latest version of Chromedriver, making it easier to set up environments for Robotic Process Automation (RPA) applications. Ideal for developers using Selenium or other tools that require Chromedriver, this package ensures that you always have the correct version, eliminating compatibility issues between the browser and the driver.
