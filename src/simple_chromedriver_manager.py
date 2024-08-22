@@ -194,8 +194,3 @@ class SimpleChromeDriverManager:
             self.download_chromedriver(link, self.chromedriver_dir)
             self.chromedriver_path = self.find_chromedriver(self.chromedriver_dir)
             return self.chromedriver_path
-
-if __name__ == '__main__':
-
-    test = SimpleChromeDriverManager().install()
-    print(test)
