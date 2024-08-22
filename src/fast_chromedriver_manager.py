@@ -20,7 +20,7 @@ class ChromeDriverDownloadError(Exception):
     pass
 
 
-class SimpleChromeDriverManager:
+class FastChromeDriverManager:
     """
     A manager for handling ChromeDriver installation and version checking.
 

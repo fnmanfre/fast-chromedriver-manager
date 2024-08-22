@@ -1,14 +1,14 @@
 import unittest
 import os
 from unittest.mock import patch, MagicMock
-from simple_chromedriver_manager import SimpleChromeDriverManager, ChromeVersionError, ChromeDriverDownloadError
+from fast_chromedriver_manager import FastChromeDriverManager, ChromeVersionError, ChromeDriverDownloadError
 
-class TestChromeDriverManager(unittest.TestCase):
+class TestFastChromeDriverManager(unittest.TestCase):
 
     @patch('subprocess.run')
     def test_get_chrome_version_success(self, mock_run):
         mock_run.return_value = MagicMock(stdout="    version    REG_SZ    100.0.4896.60")
-        manager = SimpleChromeDriverManager()
+        manager = FastChromeDriverManager()
         version = manager.get_chrome_version()
         self.assertEqual(version, "100.0.4896.60")
 
@@ -16,7 +16,7 @@ class TestChromeDriverManager(unittest.TestCase):
     def test_get_chrome_version_no_version_found(self, mock_subprocess):
         mock_subprocess.return_value.stdout = ''
         with self.assertRaises(ChromeVersionError) as context:
-            SimpleChromeDriverManager.get_chrome_version()
+            FastChromeDriverManager.get_chrome_version()
         self.assertIn("Unable to determine Chrome version", str(context.exception))
     
     @patch('requests.get')
@@ -25,7 +25,7 @@ class TestChromeDriverManager(unittest.TestCase):
         test_dir = './test_download'
         os.makedirs(test_dir, exist_ok=True)
         try:
-            manager = SimpleChromeDriverManager()
+            manager = FastChromeDriverManager()
             manager.download_chromedriver('http://example.com/chromedriver.zip', test_dir)
             self.assertTrue(os.path.exists(os.path.join(test_dir, 'chromedriver.zip')))
         finally:
@@ -43,7 +43,7 @@ class TestChromeDriverManager(unittest.TestCase):
         test_dir = './test_download'
         os.makedirs(test_dir, exist_ok=True)
         try:
-            manager = SimpleChromeDriverManager()
+            manager = FastChromeDriverManager()
             with self.assertRaises(ChromeDriverDownloadError):
                 manager.download_chromedriver('http://example.com/chromedriver.zip', test_dir)
         finally:

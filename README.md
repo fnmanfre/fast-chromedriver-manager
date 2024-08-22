@@ -1,6 +1,6 @@
-# Simple ChromeDriver Manager
+# Fast ChromeDriver Manager
 
-**Simple Chromedriver Manager** is a Python library that automates the download and installation of the correct version of Chromedriver for your browser, ensuring seamless compatibility. This makes it easier to set up environments for Robotic Process Automation (RPA) applications. Ideal for developers using Selenium or other tools that require Chromedriver, this package guarantees that you always have the right version, eliminating compatibility issues between the browser and the driver.
+**Fast Chromedriver Manager** is a Python library that automates the download and installation of the correct version of Chromedriver for your browser, ensuring seamless compatibility. This makes it easier to set up environments for Robotic Process Automation (RPA) applications. Ideal for developers using Selenium or other tools that require Chromedriver, this package guarantees that you always have the right version, eliminating compatibility issues between the browser and the driver.
 
 ### Current version: 1.0.1
 
@@ -13,14 +13,14 @@
 
 ### Note
 
-* **Current Support:** The current version of `ChromeDriverManager` supports only Windows 64-bit systems. Support for other platforms will be added in future releases.
+* **Current Support:** The current version of `fast-chromedriver-manager` supports only Windows 64-bit systems. Support for other platforms will be added in future releases.
 
 ### Usage Example
 
 ```
-from simple_chromedriver_manager import SimpleChromeDriverManager
+from fast_chromedriver_manager import FastChromeDriverManager
 
-chromedriver_path = SimpleChromeDriverManager().install()
+chromedriver_path = FastChromeDriverManager().install()
 
 print(f"ChromeDriver is installed at: {chromedriver_path}")
 
@@ -29,10 +29,10 @@ print(f"ChromeDriver is installed at: {chromedriver_path}")
 ### Usage example with specified Chromedriver path
 
 ```
-from simple_chromedriver_manager import SimpleChromeDriverManager
+from fast_chromedriver_manager import FastChromeDriverManager
 
 path = 'my_path'
-chromedriver_path = SimpleChromeDriverManager(path).install()
+chromedriver_path = FastChromeDriverManager(path).install()
 
 print(f"ChromeDriver is installed at: {chromedriver_path}")
 ```
@@ -41,11 +41,11 @@ print(f"ChromeDriver is installed at: {chromedriver_path}")
 
 ```
 from selenium import webdriver
-from simple_chromedriver_manager import SimpleChromeDriverManager
+from fast_chromedriver_manager import FastChromeDriverManager
 
 # Set up the WebDriver with the path to the ChromeDriver
 options = webdriver.ChromeOptions()
-driver = webdriver.Chrome(executable_path=SimpleChromeDriverManager().install(), options=options)
+driver = webdriver.Chrome(executable_path=FastChromeDriverManager().install(), options=options)
 
 # Open a website and perform actions
 driver.get('https://www.example.com')
@@ -63,10 +63,10 @@ driver.quit()
 ```
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from simple_chromedriver_manager import SimpleChromeDriverManager
+from fast_chromedriver_manager import FastChromeDriverManager
 
 # Set up the WebDriver with the path to the ChromeDriver using Service
-service = Service(executable_path=SimpleChromeDriverManager().install())
+service = Service(executable_path=FastChromeDriverManager().install())
 options = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=service, options=options)
 
