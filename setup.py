@@ -11,7 +11,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Fernando N. Manfré',
     author_email='fn.manfre@gmail.com',
-    url='https://github.com/fnmanfre/ChromeDriverManager',
+    url='https://github.com/fnmanfre/fast-chromedriver-manager',
     packages=find_packages(where='src'),
     package_dir={'': 'src'},   
     install_requires=[
