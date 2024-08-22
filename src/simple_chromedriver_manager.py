@@ -20,7 +20,7 @@ class ChromeDriverDownloadError(Exception):
     pass
 
 
-class ChromeDriverManager:
+class SimpleChromeDriverManager:
     """
     A manager for handling ChromeDriver installation and version checking.
 
@@ -194,4 +194,8 @@ class ChromeDriverManager:
             self.download_chromedriver(link, self.chromedriver_dir)
             self.chromedriver_path = self.find_chromedriver(self.chromedriver_dir)
             return self.chromedriver_path
-        
+
+if __name__ == '__main__':
+
+    test = SimpleChromeDriverManager().install()
+    print(test)

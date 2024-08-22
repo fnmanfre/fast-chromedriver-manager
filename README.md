@@ -1,8 +1,8 @@
-# ChromeDriverManager
+# Simple ChromeDriver Manager
 
-**Chromedriver Manager** is a Python library that automates the download and installation of the latest version of Chromedriver, making it easier to set up environments for Robotic Process Automation (RPA) applications. Ideal for developers using Selenium or other tools that require Chromedriver, this package ensures that you always have the correct version, eliminating compatibility issues between the browser and the driver.
+**Simple Chromedriver Manager** is a Python library that automates the download and installation of the correct version of Chromedriver for your browser, ensuring seamless compatibility. This makes it easier to set up environments for Robotic Process Automation (RPA) applications. Ideal for developers using Selenium or other tools that require Chromedriver, this package guarantees that you always have the right version, eliminating compatibility issues between the browser and the driver.
 
-### Current version: 1.0.0
+### Current version: 1.0.1
 
 ### Features
 
@@ -17,37 +17,35 @@
 
 ### Usage Example
 
-
 ```
-from chromedriver_manager import ChromeDriverManager
+from simple_chromedriver_manager import SimpleChromeDriverManager
 
-# Instantiate the ChromeDriver manager
-manager = ChromeDriverManager()
-
-# Check and install the correct ChromeDriver version if needed
-chromedriver_path = manager.install()
+chromedriver_path = SimpleChromeDriverManager().install()
 
 print(f"ChromeDriver is installed at: {chromedriver_path}")
 
 ```
 
-### Usage Example with Selenium
+### Usage example with specified Chromedriver path
 
-Here is how you can use `ChromeDriverManager` with Selenium to automate browser tasks:
+```
+from simple_chromedriver_manager import SimpleChromeDriverManager
+
+path = 'my_path'
+chromedriver_path = SimpleChromeDriverManager(path).install()
+
+print(f"ChromeDriver is installed at: {chromedriver_path}")
+```
+
+### Usage Example with Selenium
 
 ```
 from selenium import webdriver
-from chromedriver_manager import ChromeDriverManager
-
-# Instantiate the ChromeDriver manager
-manager = ChromeDriverManager()
-
-# Ensure the correct version of ChromeDriver is installed and get its path
-chromedriver_path = manager.install()
+from simple_chromedriver_manager import SimpleChromeDriverManager
 
 # Set up the WebDriver with the path to the ChromeDriver
 options = webdriver.ChromeOptions()
-driver = webdriver.Chrome(executable_path=chromedriver_path, options=options)
+driver = webdriver.Chrome(executable_path=SimpleChromeDriverManager().install(), options=options)
 
 # Open a website and perform actions
 driver.get('https://www.example.com')
@@ -62,21 +60,13 @@ driver.quit()
 
 ### Usage Example with Selenium and Service
 
-Here is how you can use `ChromeDriverManager` with Selenium’s `Service` to automate browser tasks:
-
 ```
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from chromedriver_manager import ChromeDriverManager
-
-# Instantiate the ChromeDriver manager
-manager = ChromeDriverManager()
-
-# Ensure the correct version of ChromeDriver is installed and get its path
-chromedriver_path = manager.install()
+from simple_chromedriver_manager import SimpleChromeDriverManager
 
 # Set up the WebDriver with the path to the ChromeDriver using Service
-service = Service(executable_path=chromedriver_path)
+service = Service(executable_path=SimpleChromeDriverManager().install())
 options = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=service, options=options)
 
@@ -102,7 +92,7 @@ The library raises custom exceptions to handle specific errors:
 
 For support, please contact:
 
-Fernando Manfré: fn.manfre@gmail.com
+Fernando Manfré:	 fn.manfre@gmail.com
 
 ### Contribution
 
