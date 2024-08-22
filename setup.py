@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='fast-chromedriver-manager',
-    version='1.0.0',
+    version='1.0.6',
     description='Fast Chromedriver Manager is a Python library that automates the download and installation of the correct version of Chromedriver for your browser, ensuring seamless compatibility. This makes it easier to set up environments for Robotic Process Automation (RPA) applications. Ideal for developers using Selenium or other tools that require Chromedriver, this package guarantees that you always have the right version, eliminating compatibility issues between the browser and the driver.',
     long_description=long_description,
     long_description_content_type='text/markdown',

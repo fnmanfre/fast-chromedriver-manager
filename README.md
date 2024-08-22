@@ -2,7 +2,7 @@
 
 **Fast Chromedriver Manager** is a Python library that automates the download and installation of the correct version of Chromedriver for your browser, ensuring seamless compatibility. This makes it easier to set up environments for Robotic Process Automation (RPA) applications. Ideal for developers using Selenium or other tools that require Chromedriver, this package guarantees that you always have the right version, eliminating compatibility issues between the browser and the driver.
 
-### Current version: 1.0.1
+### Current version: 1.0.6
 
 ### Features
 
